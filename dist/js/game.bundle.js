@@ -4030,7 +4030,11 @@ var appState = {
 };
 
 function updateApp(newState) {
-
+    if (newState.currentScreen == 'game') {
+        setTimeout(function () {
+            handleSwitchScreen('over');
+        }, 3000);
+    }
     var screenElements = document.getElementsByClassName('screen');
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
