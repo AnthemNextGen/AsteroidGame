@@ -13,6 +13,12 @@ privateBtn.addEventListener('click', function(){
     }
 });
 
+window.addEventListener('keyup', function(event){
+    if (event.keyCode == 27 && currentState.currentScreen == 'game') {
+        handleSwitchScreen('over');
+    }
+})
+
 
 function setState(targetState, updateObj){
     return Object.assign({}, targetState, updateObj);
@@ -21,6 +27,7 @@ function setState(targetState, updateObj){
 function setStateAndRender(targetState, updateObj){
     updateApp(setState(targetState, updateObj));
 }
+
 
 
 
@@ -34,11 +41,13 @@ const appState = {
   loading : true,
 };
 
+let currentState = appState;
+
 function updateApp(newState){
   if (newState.currentScreen == 'game') {
     setTimeout(function(){
       handleSwitchScreen('over');
-    }, 3000);
+    }, 8000);
   }
   const screenElements = document.getElementsByClassName('screen');
   for (let elem of screenElements){
@@ -51,6 +60,7 @@ function updateApp(newState){
 
 function switchScreen(targetScreen) {
     const newState = setState(appState, {currentScreen : targetScreen});
+    currentState = newState;
     return newState;
 }
 
