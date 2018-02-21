@@ -4011,6 +4011,12 @@ _game.privateBtn.addEventListener('click', function () {
     }
 });
 
+window.addEventListener('keyup', function (event) {
+    if (event.keyCode == 27 && currentState.currentScreen == 'game') {
+        handleSwitchScreen('over');
+    }
+});
+
 function setState(targetState, updateObj) {
     return Object.assign({}, targetState, updateObj);
 }
@@ -4029,11 +4035,13 @@ var appState = {
     loading: true
 };
 
+var currentState = appState;
+
 function updateApp(newState) {
     if (newState.currentScreen == 'game') {
         setTimeout(function () {
             handleSwitchScreen('over');
-        }, 3000);
+        }, 8000);
     }
     var screenElements = document.getElementsByClassName('screen');
     var _iteratorNormalCompletion = true;
@@ -4068,6 +4076,7 @@ function updateApp(newState) {
 
 function switchScreen(targetScreen) {
     var newState = setState(appState, { currentScreen: targetScreen });
+    currentState = newState;
     return newState;
 }
 
