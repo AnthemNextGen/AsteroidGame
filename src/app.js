@@ -1,4 +1,4 @@
-import {Game, publicGame, privateBtn} from './game'; 
+import {Game, publicGame, privateBtn} from './game';
 
 publicGame.addEventListener('click', function(){
     handleSwitchScreen('game');
@@ -8,10 +8,11 @@ publicGame.addEventListener('click', function(){
 privateBtn.addEventListener('click', function(){
     const room = prompt('Enter Private Game room name');
     if(room){
-      handleSwitchScreen('game'); 
-       
+      handleSwitchScreen('game');
+
     }
 });
+
 
 function setState(targetState, updateObj){
     return Object.assign({}, targetState, updateObj);
@@ -20,6 +21,7 @@ function setState(targetState, updateObj){
 function setStateAndRender(targetState, updateObj){
     updateApp(setState(targetState, updateObj));
 }
+
 
 
 //////////////////////// application
@@ -33,9 +35,13 @@ const appState = {
 };
 
 function updateApp(newState){
-   
+  if (newState.currentScreen == 'game') {
+    setTimeout(function(){
+      handleSwitchScreen('over');
+    }, 3000);
+  }
   const screenElements = document.getElementsByClassName('screen');
-  for (let elem of screenElements){ 
+  for (let elem of screenElements){
     if (!elem.classList.contains('hidden')) {
         elem.classList.add('hidden');
     }
@@ -53,4 +59,3 @@ function handleSwitchScreen(targetScreen){
 }
 
 updateApp(appState);
-
