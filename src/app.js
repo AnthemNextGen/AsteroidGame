@@ -1,4 +1,5 @@
 import {Game, publicGame, privateBtn} from './game';
+import {musicControl, audioUrl} from './music';
 
 publicGame.addEventListener('click', function(){
     handleSwitchScreen('game');
@@ -45,6 +46,7 @@ let currentState = appState;
 
 function updateApp(newState){
   if (newState.currentScreen == 'game') {
+      musicEnabled == true;
     setTimeout(function(){
       handleSwitchScreen('over');
     }, 8000);
@@ -53,6 +55,7 @@ function updateApp(newState){
   for (let elem of screenElements){
     if (!elem.classList.contains('hidden')) {
         elem.classList.add('hidden');
+        musicEnabled == false;
     }
   }
     document.getElementsByClassName(newState.currentScreen)[0].classList.remove('hidden');
