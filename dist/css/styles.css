@@ -137,13 +137,11 @@ video{
 }
 .inner-video{
   border: 1px solid white;
-  top: 0;
-  left: 0;
   position: relative;
   transform: none; 
-  margin:80px;
+  margin:60px;
   height: 230px;
-  width:500px;
+  width:480px;
 
 }
 .end-btn-div{
@@ -155,8 +153,8 @@ video{
     float: left;
 }
 .game-actions{
-  margin-top: 70px;
-  padding: 320px;
+  margin-top: 50px;
+  padding: 290px;
 }
 
 @keyframes fadeIn {
