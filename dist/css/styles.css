@@ -126,6 +126,32 @@ video{
   animation: drawback 3s;
 }
 
+.text-center{
+  text-align: center
+}
+
+.inner-video-div{
+    padding-top: 30px;
+  
+}
+
+.video-page{
+  position: fixed;
+  width: 100%;
+  z-index: -1
+}
+.inner-video{
+  border: 1px solid white;
+  top: 0;
+  left: 0;
+  position: relative;
+  transform: none; 
+  margin:80px;
+  height: 240px;
+  width:600px;
+
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
