@@ -13,6 +13,7 @@ privateBtn.addEventListener('click', function () {
     if (room) {
         handleSwitchScreen('game');
         gameScreen.style.display = 'block';
+        audio.pause();
     }
 });
 
