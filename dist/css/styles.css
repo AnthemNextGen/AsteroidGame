@@ -130,11 +130,6 @@ video{
   text-align: center
 }
 
-.inner-video-div{
-    padding-top: 30px;
-  
-}
-
 .video-page{
   position: fixed;
   width: 100%;
@@ -147,9 +142,21 @@ video{
   position: relative;
   transform: none; 
   margin:80px;
-  height: 240px;
-  width:600px;
+  height: 230px;
+  width:500px;
 
+}
+.end-btn-div{
+  width: 50%;
+  float: right;
+}
+.start-btn-div{
+    width: 50%;
+    float: left;
+}
+.game-actions{
+  margin-top: 70px;
+  padding: 320px;
 }
 
 @keyframes fadeIn {
