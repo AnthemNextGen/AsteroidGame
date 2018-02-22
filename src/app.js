@@ -1,7 +1,8 @@
-import {Game, publicGame, privateBtn} from './game';
+import {publicGame, privateBtn, gameScreen} from './game';
 
 publicGame.addEventListener('click', function(){
     handleSwitchScreen('game');
+    gameScreen.style.display = 'block';
 });
 
 
@@ -9,9 +10,11 @@ privateBtn.addEventListener('click', function(){
     const room = prompt('Enter Private Game room name');
     if(room){
       handleSwitchScreen('game');
+      gameScreen.style.display = 'block';
 
     }
 });
+
 
 window.addEventListener('keyup', function(event){
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
@@ -44,11 +47,6 @@ const appState = {
 let currentState = appState;
 
 function updateApp(newState){
-  if (newState.currentScreen == 'game') {
-    setTimeout(function(){
-      handleSwitchScreen('over');
-    }, 8000);
-  }
   const screenElements = document.getElementsByClassName('screen');
   for (let elem of screenElements){
     if (!elem.classList.contains('hidden')) {
@@ -69,3 +67,5 @@ function handleSwitchScreen(targetScreen){
 }
 
 updateApp(appState);
+
+//alert(currentState);

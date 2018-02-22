@@ -4,14 +4,32 @@
 	<meta charset="UTF-8">
 	<title>Asteroid Game</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="js/lib/class.js"></script>
+
+	<!-- Before states -->
+	<script src="js/points.js"></script>
+	<script src="js/polygon.js"></script>
+	<script src="js/ship.js"></script>
+	<script src="js/asteroid.js"></script>
+	<script src="js/bullet.js"></script>
+
+	<!-- States -->
+	<script src="js/state.js"></script>
+	<script src="js/gameState.js"></script>
+	<script src="js/menuState.js"></script>
+	<script src="js/endState.js"></script>
+
+	<!-- Managers and listeners -->
+	<script src="js/canvas.js"></script>
+	<script src="js/input.js"></script>
+
+	<!-- Main file -->
+	<script src="js/main.js"></script>
 </head>
 <body>
-		<div class='splash screen hidden'>
+		<div class='splash screen'>
 		  <div id="splash">
-		    <!-- <div id="musicDiv">
-		      <button id="play"><img src="assets/pauseVolumeIcon.png"  height="40" width="40"></button>
-		    </div>-->
-		    <video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display="none" autoplay="true" loop></video> 
+		    <video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display="none" autoplay="true" loop></video>
 		    <div id="title">NextGen Asteroids</div>
 		    <div id="welcome">Welcome!</div>
 
@@ -34,21 +52,42 @@
 		        </tr>
 		      </table>
 		    </div>
-		    <div id="startPrompt">Press ENTER to Start</div>
+		    <div id="startPrompt">SELECT GAME MODE</div>
 		    <div id="copyright">copyright © 2018, NextGen Broker Team</div>
 		  </div>
 		</div>
 
 
-		<div class='game screen hidden'>
-		  <h1>GAME</h1>
-		  <canvas id="gameCanvas" width="500" height="500"></canvas>
-		</div>
-		<div class='over screen hidden'>
-		  <h1>GAME OVER</h1>
+		<div class='game screen' id="gameScreen">
+		  <canvas id="gameCanvas" width="500" height="500"  ></canvas>
 		</div>
 
 
+		<div class='over screen hidden' hidden>
+				<video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display="none" autoplay="true" loop></video>
+				<div class="game-over-page">
+						<div class="text-center" >
+								<img class="inner-video" poster="" src="assets/over.gif"display="none" autoplay="true" loop></img>
+						</div>
+						<div class="text-center game-actions" >
+								<div class="start-btn-div">
+									<button  class="menuButton">PLAY AGAIN</button>
+								</div>
+								<div class="end-btn-div">
+									<button class="menuButton">END GAME</button>
+								</div>
+						</div>
+				</div>
+		</div>
+
+		<script>
+				// create, initiate and run game
+				if(!document.getElementById('gameCanvas').classList.contains('hidden')){
+					var game = new Game();
+					game.run();
+			}
+
+		</script>
 	<script src="js/game.bundle.js"></script>
 </body>
 </html>
