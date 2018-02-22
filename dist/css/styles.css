@@ -6,11 +6,13 @@ body {
   display: none;
 }
 
+
 #gameCanvas {
   position: absolute;
   margin: auto;
   left: 0;
   right: 0;
+	display: none;
 }
 
 html{
@@ -138,7 +140,7 @@ video{
 .inner-video{
   border: 1px solid white;
   position: relative;
-  transform: none; 
+  transform: none;
   margin:60px;
   height: 230px;
   width:480px;
@@ -201,7 +203,7 @@ video{
   }}
 
   #musicDiv {
-    position:fixed; 
-    bottom:0; 
+    position:fixed;
+    bottom:0;
     right:0;
   }
