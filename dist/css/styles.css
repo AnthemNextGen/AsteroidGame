@@ -6,11 +6,13 @@ body {
   display: none;
 }
 
+
 #gameCanvas {
   position: absolute;
   margin: auto;
   left: 0;
   right: 0;
+	display: none;
 }
 
 html{
@@ -130,11 +132,6 @@ video{
   text-align: center
 }
 
-.inner-video-div{
-    padding-top: 30px;
-  
-}
-
 .video-page{
   position: fixed;
   width: 100%;
@@ -142,14 +139,24 @@ video{
 }
 .inner-video{
   border: 1px solid white;
-  top: 0;
-  left: 0;
   position: relative;
-  transform: none; 
-  margin:80px;
-  height: 240px;
-  width:600px;
+  transform: none;
+  margin:60px;
+  height: 230px;
+  width:480px;
 
+}
+.end-btn-div{
+  width: 50%;
+  float: right;
+}
+.start-btn-div{
+    width: 50%;
+    float: left;
+}
+.game-actions{
+  margin-top: 50px;
+  padding: 290px;
 }
 
 @keyframes fadeIn {
@@ -196,7 +203,7 @@ video{
   }}
 
   #musicDiv {
-    position:fixed; 
-    bottom:0; 
+    position:fixed;
+    bottom:0;
     right:0;
   }
