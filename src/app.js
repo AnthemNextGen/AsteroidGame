@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import {Game, publicGame, privateBtn} from './game';
-import {musicControl, audioUrl} from './music';
-=======
 import {publicGame, privateBtn, gameScreen} from './game';
->>>>>>> master
+import {musicControl, audioUrl} from './music';
 
 publicGame.addEventListener('click', function(){
     handleSwitchScreen('game');

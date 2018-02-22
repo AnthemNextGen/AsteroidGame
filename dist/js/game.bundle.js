@@ -70,7 +70,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: SyntaxError: C:/projects/AsteroidGame/src/app.js: Unexpected token (1:0)\n\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m   | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 2 | \u001b[39m\u001b[36mimport\u001b[39m {\u001b[33mGame\u001b[39m\u001b[33m,\u001b[39m publicGame\u001b[33m,\u001b[39m privateBtn} from \u001b[32m'./game'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 3 | \u001b[39m\u001b[36mimport\u001b[39m {musicControl\u001b[33m,\u001b[39m audioUrl} from \u001b[32m'./music'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 4 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n");
+throw new Error("Module build failed: SyntaxError: C:/projects/AsteroidGame/src/app.js: Unexpected token (51:0)\n\n\u001b[0m \u001b[90m 49 | \u001b[39m\n \u001b[90m 50 | \u001b[39m\u001b[36mfunction\u001b[39m updateApp(newState){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 51 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 52 | \u001b[39m  \u001b[36mif\u001b[39m (newState\u001b[33m.\u001b[39mcurrentScreen \u001b[33m==\u001b[39m \u001b[32m'game'\u001b[39m) {\n \u001b[90m 53 | \u001b[39m      musicEnabled \u001b[33m==\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 54 | \u001b[39m    setTimeout(\u001b[36mfunction\u001b[39m(){\u001b[0m\n");
 
 /***/ })
 /******/ ]);
