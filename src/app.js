@@ -5,6 +5,12 @@ publicGame.addEventListener('click', function(){
     gameScreen.style.display = 'block';
 });
 
+document.getElementById('playAgain').addEventListener('click', function(){
+    handleSwitchScreen('splash');
+    gameScreen.style.display = 'none'
+
+})
+
 
 privateBtn.addEventListener('click', function(){
     const room = prompt('Enter Private Game room name');
@@ -17,8 +23,10 @@ privateBtn.addEventListener('click', function(){
 
 
 window.addEventListener('keyup', function(event){
+    
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
-        handleSwitchScreen('over screen hidden');
+        handleSwitchScreen('over');
+        gameScreen.style.display = 'none'
     }
 })
 
