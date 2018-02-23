@@ -4017,6 +4017,8 @@ window.addEventListener('keyup', function (event) {
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
         handleSwitchScreen('over');
         _game.gameScreen.style.display = 'none';
+        var game = new Game();
+        game.run();
     }
 });
 
