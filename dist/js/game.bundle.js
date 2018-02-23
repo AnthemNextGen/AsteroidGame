@@ -4008,7 +4008,7 @@ _game.privateBtn.addEventListener('click', function () {
 
 window.addEventListener('keyup', function (event) {
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
-        handleSwitchScreen('over');
+        handleSwitchScreen('over screen hidden');
     }
 });
 
