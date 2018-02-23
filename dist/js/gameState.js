@@ -4,11 +4,6 @@ var AsteroidSize = 8;
 
 var GameState = State.extend({
 
-	/**
-	 * Constructor
-	 *
-	 * @param  {Game} game manager for the state
-	 */
 	init: function(game) {
 		this._super(game);
 
@@ -25,10 +20,10 @@ var GameState = State.extend({
 		this.lives = 3;
 
 		this.gameOver = false;
-
+		this.socket = io('localhost:5000');
+		console.log(this.socket);
 		this.score = 0;
 		this.lvl = 0;
-
 		// create lifepolygon and rotate 45° counter clockwise
 		this.lifepolygon = new Polygon(Points.SHIP);
 		this.lifepolygon.scale(1.5);

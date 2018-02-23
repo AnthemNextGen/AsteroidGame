@@ -4086,8 +4086,6 @@ function handleSwitchScreen(targetScreen) {
 
 updateApp(appState);
 
-//alert(currentState);
-
 /***/ }),
 /* 28 */
 /***/ (function(module, exports) {
