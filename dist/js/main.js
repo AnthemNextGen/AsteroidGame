@@ -22,10 +22,10 @@ var Game = Class.extend({
 		this.canvas = new Canvas(innerWidth, innerHeight);
 
 		this.input = new InputHandeler({
-			left:     37,
-			up:       38,
-			right:    39,
-			down:     40,
+			left:     65,
+			up:       87,
+			right:    68,
+			down:     83,
 			spacebar: 32,
 			enter:    13
 		});
