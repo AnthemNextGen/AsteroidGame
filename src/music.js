@@ -7,10 +7,6 @@ export var IsMusicEnabled = false;
 var soundPauseIcon = '<img src="./assets/pauseVolumeIcon.png"height="40" width="40" />';
 var soundPlayIcon = '<img src="./assets/playVolumeIcon.png" height="40" width="40" />';
 
-// if(gameScreen == 'game'){
-//   audio.pause();
-// }
-
 export function musicControl(audioUrl) {
   if (audioUrl && audio.paused) {
     audio.play(),
@@ -21,6 +17,8 @@ export function musicControl(audioUrl) {
     audio.pause(),
       IsMusicEnabled = false;
     return true;
+  }else if (gameScreen == 'game'){
+    audio.pause();
   }
 }
 

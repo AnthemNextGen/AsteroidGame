@@ -1,10 +1,10 @@
 import { publicGame, privateBtn, gameScreen } from './game';
-import { musicControl, audio, IsMusicEnabled as musicEnabled } from './music';
+import { musicControl, audioUrl, IsMusicEnabled as musicEnabled } from './music';
 
 publicGame.addEventListener('click', function () {
     handleSwitchScreen('game');
     gameScreen.style.display = 'block';
-    audio.pause();
+    musicControl(audioUrl);
 });
 
 
@@ -13,7 +13,7 @@ privateBtn.addEventListener('click', function () {
     if (room) {
         handleSwitchScreen('game');
         gameScreen.style.display = 'block';
-        audio.pause();
+        musicControl(audioUrl);
     }
 });
 
