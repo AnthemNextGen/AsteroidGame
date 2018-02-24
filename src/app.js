@@ -70,5 +70,3 @@ function handleSwitchScreen(targetScreen) {
 }
 
 updateApp(appState);
-
-//alert(currentState);
