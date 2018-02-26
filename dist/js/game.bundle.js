@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -233,3 +234,5 @@ updateApp(appState);
 
 /******/ });
 //# sourceMappingURL=game.bundle.js.map
+=======
+>>>>>>> bde330cf13b014784dc715e8d1c055a43f02c0c4
