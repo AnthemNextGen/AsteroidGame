@@ -16,7 +16,6 @@ startButton.addEventListener('click', function () {
         if(game_room){
           handleSwitchScreen('game');
           gameScreen.style.display = 'block';
-    
         }
     });
 
