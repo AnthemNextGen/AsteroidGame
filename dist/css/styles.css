@@ -58,12 +58,29 @@ table {
   display: none;
 }
 
-.menuButton{
+#codeInput{
   background-color: rgba(255, 255, 255, 0.00);
   color: rgb(255, 255, 255);
   border: 2px solid white;
   border-radius: 5px;
-  padding: 1vw 5vw;
+  width: 30vw;
+  text-align: center;
+  font-size: 2vw;
+ 
+}
+
+#codeInput:focus {
+  outline: none;
+  border: 2px solid rgb(255, 238, 0);
+}
+
+.menuButton{
+  background-color: rgba(255, 255, 255, 0.00);
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+  width: 30vw;
+  border-radius: 5px;
+  padding: 1vw 2vw;
   font-family: "Lucida Console", "Arial";
   font-size: 2vw;
   animation: fadeIn 10s;

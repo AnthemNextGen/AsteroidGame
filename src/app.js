@@ -1,20 +1,27 @@
 import {publicGame, privateBtn, gameScreen} from './game';
 
 publicGame.addEventListener('click', function(){
+    document.getElementById('codeDiv').style.display = ('none');
     handleSwitchScreen('game');
     gameScreen.style.display = 'block';
 });
 
 
 privateBtn.addEventListener('click', function(){
-    const room = prompt('Enter Private Game room name');
-    if(room){
-      handleSwitchScreen('game');
-      gameScreen.style.display = 'block';
-
-    }
+    document.getElementById('codeDiv').style.display = ('block');
+    document.getElementById('codeInput').focus();
 });
 
+codeInput.addEventListener('keyup', function (e) {
+    if (e.keyCode == 13) {
+        const room = document.getElementById('codeInput').value;
+        if(room){
+            handleSwitchScreen('game');
+            gameScreen.style.display = 'block';
+      
+          }
+    }
+});
 
 window.addEventListener('keyup', function(event){
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
