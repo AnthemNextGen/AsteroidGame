@@ -12,7 +12,6 @@ privateBtn.addEventListener('click', function () {
     document.getElementById('codeDiv').style.display = ('block');
     document.getElementById('codeInput').focus();
     document.getElementById('startPrompt').style.display = ('none');
-    audio.pause();
 });
 
 startButton.addEventListener('click', function () {
@@ -20,6 +19,7 @@ startButton.addEventListener('click', function () {
     if (game_room) {
         handleSwitchScreen('game');
         gameScreen.style.display = 'block';
+        audio.pause();
     }
 });
 

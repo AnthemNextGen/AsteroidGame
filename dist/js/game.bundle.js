@@ -3939,7 +3939,7 @@ var soundPauseIcon = '<img src="./assets/pauseVolumeIcon.png"height="40" width="
 var soundPlayIcon = '<img src="./assets/playVolumeIcon.png" height="40" width="40" />';
 
 function musicControl(audioUrl) {
-  if (_game.gameScreen != 'gameScreen.game.screen' && audio.paused) {
+  if (audioUrl && audio.paused) {
     audio.play();
     audio.loop = true;
     exports.IsMusicEnabled = IsMusicEnabled = true;
@@ -3951,7 +3951,7 @@ function musicControl(audioUrl) {
   }
 }
 
-button.addEventListener('mousedown', function (event) {
+button.addEventListener('click', function (event) {
   if (IsMusicEnabled == true) {
     musicControl(audioUrl);
     button.innerHTML = soundPauseIcon;
@@ -4042,13 +4042,20 @@ var _game = __webpack_require__(10);
 var _music = __webpack_require__(25);
 
 _game.publicGame.addEventListener('click', function () {
+    document.getElementById('codeDiv').style.display = 'none';
     handleSwitchScreen('game');
     _game.gameScreen.style.display = 'block';
     _music.audio.pause();
 });
 
 _game.privateBtn.addEventListener('click', function () {
-    game_room = prompt('Enter Private Game room name');
+    document.getElementById('codeDiv').style.display = 'block';
+    document.getElementById('codeInput').focus();
+    document.getElementById('startPrompt').style.display = 'none';
+});
+
+startButton.addEventListener('click', function () {
+    game_room = document.getElementById('codeInput').value;
     if (game_room) {
         handleSwitchScreen('game');
         _game.gameScreen.style.display = 'block';

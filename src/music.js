@@ -20,7 +20,7 @@ export function musicControl(audioUrl) {
   }
 }
 
-button.addEventListener('mousedown', (event) => {
+button.addEventListener('click', (event) => {
   if (IsMusicEnabled == true) {
     musicControl(audioUrl);
     button.innerHTML = soundPauseIcon;
