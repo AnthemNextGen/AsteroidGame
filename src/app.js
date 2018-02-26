@@ -1,18 +1,23 @@
 import {publicGame, privateBtn, gameScreen} from './game';
 publicGame.addEventListener('click', function(){
+    document.getElementById('codeDiv').style.display = ('none');
     handleSwitchScreen('game');
     gameScreen.style.display = 'block';
 });
 
-
 privateBtn.addEventListener('click', function(){
-     game_room = prompt('Enter Private Game room name');
-    if(game_room){
-      handleSwitchScreen('game');
-      gameScreen.style.display = 'block';
-
-    }
+    document.getElementById('codeDiv').style.display = ('block');
+    document.getElementById('codeInput').focus();
+    document.getElementById('startPrompt').style.display = ('none');
 });
+
+startButton.addEventListener('click', function () {
+        game_room = document.getElementById('codeInput').value;
+        if(game_room){
+          handleSwitchScreen('game');
+          gameScreen.style.display = 'block';
+        }
+    });
 
 
 window.addEventListener('keyup', function(event){

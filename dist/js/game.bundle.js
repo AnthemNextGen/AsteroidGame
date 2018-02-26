@@ -63,12 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 27);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 24:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82,22 +81,28 @@ var publicGame = exports.publicGame = document.getElementById('publicButton');
 var gameScreen = exports.gameScreen = document.getElementById('gameCanvas');
 
 /***/ }),
-
-/***/ 27:
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _game = __webpack_require__(24);
+var _game = __webpack_require__(0);
 
 _game.publicGame.addEventListener('click', function () {
+    document.getElementById('codeDiv').style.display = 'none';
     handleSwitchScreen('game');
     _game.gameScreen.style.display = 'block';
 });
 
 _game.privateBtn.addEventListener('click', function () {
-    game_room = prompt('Enter Private Game room name');
+    document.getElementById('codeDiv').style.display = 'block';
+    document.getElementById('codeInput').focus();
+    document.getElementById('startPrompt').style.display = 'none';
+});
+
+startButton.addEventListener('click', function () {
+    game_room = document.getElementById('codeInput').value;
     if (game_room) {
         handleSwitchScreen('game');
         _game.gameScreen.style.display = 'block';
@@ -175,6 +180,5 @@ function handleSwitchScreen(targetScreen) {
 updateApp(appState);
 
 /***/ })
-
-/******/ });
+/******/ ]);
 //# sourceMappingURL=game.bundle.js.map
