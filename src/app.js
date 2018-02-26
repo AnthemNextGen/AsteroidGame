@@ -2,18 +2,24 @@ import { publicGame, privateBtn, gameScreen } from './game';
 import { audio, IsMusicEnabled as musicEnabled } from './music';
 
 publicGame.addEventListener('click', function () {
+    document.getElementById('codeDiv').style.display = ('none');
     handleSwitchScreen('game');
     gameScreen.style.display = 'block';
     audio.pause();
 });
 
+privateBtn.addEventListener('click', function () {
+    document.getElementById('codeDiv').style.display = ('block');
+    document.getElementById('codeInput').focus();
+    document.getElementById('startPrompt').style.display = ('none');
+    audio.pause();
+});
 
-privateBtn.addEventListener('click', function(){
-     game_room = prompt('Enter Private Game room name');
-    if(game_room){
-      handleSwitchScreen('game');
-      gameScreen.style.display = 'block';
-      audio.pause();
+startButton.addEventListener('click', function () {
+    game_room = document.getElementById('codeInput').value;
+    if (game_room) {
+        handleSwitchScreen('game');
+        gameScreen.style.display = 'block';
     }
 });
 
