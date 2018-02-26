@@ -26,12 +26,24 @@ console.log(socket.handshake.query);
 });
 
 io.on('connection', (socket)=>{
-  console.log('A player joinned');
-  if(room){
-    console.log('A player joinned room :' + room);
-    console.log(game_rooms);
-  }else{
-    console.log('A player Joinned the Public Game');
-    console.log(game_rooms);
-  }
+  socket.on('join', (data)=>{
+    console.log('A player joinned');
+    if(room){
+      console.log('A player joinned room :' + room);
+      console.log(game_rooms);
+    }else{
+      console.log('A player Joinned the Public Game');
+      console.log(game_rooms);
+    }
+  });
+
+  socket.on('disconnect', ()=>{
+    if(room){
+      console.log(socket.id + ' left private game '+ room);
+    }else{
+      console.log(socket.id + ' Left Public Game');
+    }
+  });
+
+  
 });
