@@ -63,11 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 27);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 24:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81,13 +82,14 @@ var publicGame = exports.publicGame = document.getElementById('publicButton');
 var gameScreen = exports.gameScreen = document.getElementById('gameCanvas');
 
 /***/ }),
-/* 1 */
+
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _game = __webpack_require__(0);
+var _game = __webpack_require__(24);
 
 _game.publicGame.addEventListener('click', function () {
     handleSwitchScreen('game');
@@ -173,5 +175,6 @@ function handleSwitchScreen(targetScreen) {
 updateApp(appState);
 
 /***/ })
-/******/ ]);
+
+/******/ });
 //# sourceMappingURL=game.bundle.js.map
