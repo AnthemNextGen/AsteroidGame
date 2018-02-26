@@ -13,8 +13,8 @@ privateBtn.addEventListener('click', function(){
 });
 
 startButton.addEventListener('click', function () {
-        const room = document.getElementById('codeInput').value;
-        if(room){
+        let game_room = document.getElementById('codeInput').value;
+        if(game_room){
             handleSwitchScreen('game');
             gameScreen.style.display = 'block';
           }
