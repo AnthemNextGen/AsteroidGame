@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "concurrently \"webpack\" \"nodemon node server.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start karma.conf.js"
   },
   "keywords": [],
   "author": "Anthem NextGen Team",
@@ -24,6 +24,10 @@
     "babel-preset-env": "^1.4.0",
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4",
+    "jasmine-core": "^3.0.0",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
     "webpack": "^2.5.1"
   }
 }
