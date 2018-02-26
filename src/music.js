@@ -8,17 +8,15 @@ var soundPauseIcon = '<img src="./assets/pauseVolumeIcon.png"height="40" width="
 var soundPlayIcon = '<img src="./assets/playVolumeIcon.png" height="40" width="40" />';
 
 export function musicControl(audioUrl) {
-  if (audioUrl && audio.paused) {
-    audio.play(),
-      audio.loop = true,
-      IsMusicEnabled = true;
+  if (gameScreen != 'gameScreen.game.screen' && audio.paused) {
+    audio.play();
+    audio.loop = true;
+    IsMusicEnabled = true;
     return true;
   } else if (audioUrl && audio.play) {
-    audio.pause(),
-      IsMusicEnabled = false;
-    return true;
-  }else if (gameScreen == 'game'){
     audio.pause();
+    IsMusicEnabled = false;
+    return true;
   }
 }
 

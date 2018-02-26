@@ -3939,14 +3939,15 @@ var soundPauseIcon = '<img src="./assets/pauseVolumeIcon.png"height="40" width="
 var soundPlayIcon = '<img src="./assets/playVolumeIcon.png" height="40" width="40" />';
 
 function musicControl(audioUrl) {
-  if (audioUrl && audio.paused) {
-    audio.play(), audio.loop = true, exports.IsMusicEnabled = IsMusicEnabled = true;
+  if (_game.gameScreen != 'gameScreen.game.screen' && audio.paused) {
+    audio.play();
+    audio.loop = true;
+    exports.IsMusicEnabled = IsMusicEnabled = true;
     return true;
   } else if (audioUrl && audio.play) {
-    audio.pause(), exports.IsMusicEnabled = IsMusicEnabled = false;
-    return true;
-  } else if (_game.gameScreen == 'game') {
     audio.pause();
+    exports.IsMusicEnabled = IsMusicEnabled = false;
+    return true;
   }
 }
 
@@ -4043,7 +4044,7 @@ var _music = __webpack_require__(25);
 _game.publicGame.addEventListener('click', function () {
     handleSwitchScreen('game');
     _game.gameScreen.style.display = 'block';
-    (0, _music.musicControl)(_music.audioUrl);
+    _music.audio.pause();
 });
 
 _game.privateBtn.addEventListener('click', function () {
@@ -4051,7 +4052,7 @@ _game.privateBtn.addEventListener('click', function () {
     if (room) {
         handleSwitchScreen('game');
         _game.gameScreen.style.display = 'block';
-        (0, _music.musicControl)(_music.audioUrl);
+        _music.audio.pause();
     }
 });
 
