@@ -4004,6 +4004,14 @@ document.getElementById('playAgain').addEventListener('click', function () {
     _game.gameScreen.style.display = 'none';
 });
 
+document.getElementById('endGame').addEventListener('click', function () {
+    document.getElementById('modal-popup').style.display = 'block';
+});
+
+document.getElementById('close').addEventListener('click', function () {
+    document.getElementById('modal-popup').style.display = 'none';
+});
+
 _game.privateBtn.addEventListener('click', function () {
     var room = prompt('Enter Private Game room name');
     if (room) {
@@ -4083,6 +4091,8 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen) {
     setStateAndRender(switchScreen(targetScreen));
 }
+
+window.handleSwitchScreen = handleSwitchScreen;
 
 updateApp(appState);
 

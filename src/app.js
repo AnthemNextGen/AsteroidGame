@@ -10,6 +10,14 @@ document.getElementById('playAgain').addEventListener('click', function(){
 
 })
 
+document.getElementById('endGame').addEventListener('click', function(){
+    document.getElementById('modal-popup').style.display = 'block'
+})
+
+document.getElementById('close').addEventListener('click', function(){
+    document.getElementById('modal-popup').style.display = 'none'
+})
+
 
 privateBtn.addEventListener('click', function(){
     const room = prompt('Enter Private Game room name');
@@ -74,5 +82,7 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen){
     setStateAndRender(switchScreen(targetScreen));
 }
+
+window.handleSwitchScreen = handleSwitchScreen
 
 updateApp(appState);

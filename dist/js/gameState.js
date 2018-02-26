@@ -203,6 +203,12 @@ var GameState = State.extend({
 		// draw game over messege
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
+			setTimeout(function(){
+				handleSwitchScreen('over');
+				document.getElementById('gameCanvas').style.display = 'none'
+				var game = new Game();
+				game.run();
+			},3000)
 		}
 		// draw ship
 		this.ship.draw(ctx);
