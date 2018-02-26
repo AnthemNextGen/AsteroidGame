@@ -5,7 +5,6 @@ publicGame.addEventListener('click', function(){
     gameScreen.style.display = 'block';
 });
 
-
 privateBtn.addEventListener('click', function(){
     document.getElementById('codeDiv').style.display = ('block');
     document.getElementById('codeInput').focus();
@@ -13,13 +12,14 @@ privateBtn.addEventListener('click', function(){
 });
 
 startButton.addEventListener('click', function () {
-        let game_room = document.getElementById('codeInput').value;
+        game_room = document.getElementById('codeInput').value;
         if(game_room){
-            handleSwitchScreen('game');
-            gameScreen.style.display = 'block';
-          }
-    }
-);
+          handleSwitchScreen('game');
+          gameScreen.style.display = 'block';
+    
+        }
+    });
+
 
 window.addEventListener('keyup', function(event){
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
