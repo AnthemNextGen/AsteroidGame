@@ -204,6 +204,9 @@ var GameState = State.extend({
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
 		}
+		function drawShip(){
+			this.ship.draw(ctx);
+		}
 		// draw ship
 		this.ship.draw(ctx);
 	}
