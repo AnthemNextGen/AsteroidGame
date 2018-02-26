@@ -8,12 +8,12 @@ publicGame.addEventListener('click', function () {
 });
 
 
-privateBtn.addEventListener('click', function () {
-    const room = prompt('Enter Private Game room name');
-    if (room) {
-        handleSwitchScreen('game');
-        gameScreen.style.display = 'block';
-        audio.pause();
+privateBtn.addEventListener('click', function(){
+     game_room = prompt('Enter Private Game room name');
+    if(game_room){
+      handleSwitchScreen('game');
+      gameScreen.style.display = 'block';
+      audio.pause();
     }
 });
 
