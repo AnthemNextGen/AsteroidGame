@@ -3994,12 +3994,19 @@ module.exports = function(arraybuffer, start, end) {
 var _game = __webpack_require__(24);
 
 _game.publicGame.addEventListener('click', function () {
+    document.getElementById('codeDiv').style.display = 'none';
     handleSwitchScreen('game');
     _game.gameScreen.style.display = 'block';
 });
 
 _game.privateBtn.addEventListener('click', function () {
-    game_room = prompt('Enter Private Game room name');
+    document.getElementById('codeDiv').style.display = 'block';
+    document.getElementById('codeInput').focus();
+    document.getElementById('startPrompt').style.display = 'none';
+});
+
+startButton.addEventListener('click', function () {
+    game_room = document.getElementById('codeInput').value;
     if (game_room) {
         handleSwitchScreen('game');
         _game.gameScreen.style.display = 'block';
