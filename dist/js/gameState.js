@@ -1,14 +1,8 @@
 
 var AsteroidSize = 8;
 
-
 var GameState = State.extend({
 
-	/**
-	 * Constructor
-	 *
-	 * @param  {Game} game manager for the state
-	 */
 	init: function(game) {
 		this._super(game);
 
@@ -26,9 +20,20 @@ var GameState = State.extend({
 
 		this.gameOver = false;
 
+		// Socket code and game mode
+		if(game_room){
+			this.socket =  io({
+			  query: {
+			    token: game_room
+			  }
+			});
+		}else{
+			this.socket = io();  // Public game
+			console.log(this.socket);
+		}
+
 		this.score = 0;
 		this.lvl = 0;
-
 		// create lifepolygon and rotate 45° counter clockwise
 		this.lifepolygon = new Polygon(Points.SHIP);
 		this.lifepolygon.scale(1.5);
@@ -194,7 +199,13 @@ var GameState = State.extend({
 	render: function(ctx) {
 		ctx.clearAll();
 		// draw score and extra lives
-		ctx.vectorText(this.score, 3, 35, 15);
+		if(game_room){
+			ctx.vectorText(this.score, 3, 35, 15);
+			ctx.vectorText('THIS IS A PRIVATE GAME', 3, 465, 15);
+		}else{
+			ctx.vectorText(this.score, 3, 35, 15);
+		}
+
 		for (var i = 0; i < this.lives; i++) {
 			ctx.drawPolygon(this.lifepolygon, 40+15*i, 50);
 		}
@@ -208,6 +219,9 @@ var GameState = State.extend({
 		// draw game over messege
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
+		}
+		function drawShip(){
+			this.ship.draw(ctx);
 		}
 		// draw ship
 		this.ship.draw(ctx);

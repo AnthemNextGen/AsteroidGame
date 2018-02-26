@@ -1,5 +1,4 @@
 import {publicGame, privateBtn, gameScreen} from './game';
-
 publicGame.addEventListener('click', function(){
     document.getElementById('codeDiv').style.display = ('none');
     handleSwitchScreen('game');
@@ -73,5 +72,3 @@ function handleSwitchScreen(targetScreen){
 }
 
 updateApp(appState);
-
-//alert(currentState);

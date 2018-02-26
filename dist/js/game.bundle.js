@@ -3999,8 +3999,8 @@ _game.publicGame.addEventListener('click', function () {
 });
 
 _game.privateBtn.addEventListener('click', function () {
-    var room = prompt('Enter Private Game room name');
-    if (room) {
+    game_room = prompt('Enter Private Game room name');
+    if (game_room) {
         handleSwitchScreen('game');
         _game.gameScreen.style.display = 'block';
     }
@@ -4075,8 +4075,6 @@ function handleSwitchScreen(targetScreen) {
 }
 
 updateApp(appState);
-
-//alert(currentState);
 
 /***/ }),
 /* 28 */
