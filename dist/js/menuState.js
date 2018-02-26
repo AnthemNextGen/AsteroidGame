@@ -1,9 +1,11 @@
-var game_room;
+/**
+ * MenuState class, set on game start
+ */
 var MenuState = State.extend({
 
 	/**
 	 * Constructor
-	 *
+	 * 
 	 * @param  {Game} game manager for the state
 	 */
 	init: function(game) {
@@ -38,7 +40,7 @@ var MenuState = State.extend({
 
 	/**
 	 * @override State.handleInputs
-	 *
+	 * 
 	 * @param  {InputHandeler} input keeps track of all pressed keys
 	 */
 	handleInputs: function(input) {
@@ -59,7 +61,7 @@ var MenuState = State.extend({
 
 	/**
 	 * @override State.render
-	 *
+	 * 
 	 * @param  {context2d} ctx augmented drawing context
 	 */
 	render: function(ctx) {
@@ -69,11 +71,9 @@ var MenuState = State.extend({
 		for (var i = 0, len = this.asteroids.length; i < len; i++) {
 			this.asteroids[i].draw(ctx);
 		}
-		if(game_room){
-			ctx.vectorText('THIS IS A PRIVATE GAME ROOM', 3, 465, 15);
-		}
+
 		// draw title text
-		ctx.vectorText(" NEXTGEN ASTEROIDS", 6, null, 180);
+		ctx.vectorText("ASTEROIDS", 6, null, 180);
 		ctx.vectorText("push space to play", 2, null, 260);
 	}
 });

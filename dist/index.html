@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Asteroid Game</title>
-	<link rel="shortcut icon" href="">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script src="js/socket.io.js"></script>
 	<script src="js/lib/class.js"></script>
@@ -65,7 +64,7 @@
 		</div>
 
 
-		<div class='over screen hidden' hidden>
+		<div class='over screen' >
 				<video id="video" class="video-page" poster="" src="assets/giphy.mp4" type="video/mp4" display="none" autoplay="true" loop></video>
 				<div class="game-over-page">
 						<div class="text-center" >
@@ -73,14 +72,22 @@
 						</div>
 						<div class="text-center game-actions" >
 								<div class="start-btn-div">
-									<button  class="menuButton">PLAY AGAIN</button>
+									<button id="playAgain" class="menuButton">PLAY AGAIN</button>
 								</div>
 								<div class="end-btn-div">
-									<button class="menuButton">END GAME</button>
+									<button id="endGame" class="menuButton">END GAME</button>
 								</div>
 						</div>
 				</div>
 		</div>
+
+		<div class="popup-container" id="modal-popup">
+			<span class="helper"></span>
+			<div>
+					<div id="close" class="popupCloseButton">X</div>
+					<p>Thankyou for Playing the <br>NEXT GEN ASTERIODS GAME!</br></p>
+			</div>
+	</div>
 
 		<script>
 				// create, initiate and run game

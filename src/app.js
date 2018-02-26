@@ -4,10 +4,24 @@ publicGame.addEventListener('click', function(){
     gameScreen.style.display = 'block';
 });
 
+document.getElementById('playAgain').addEventListener('click', function(){
+    handleSwitchScreen('splash');
+    gameScreen.style.display = 'none'
+
+})
+
+document.getElementById('endGame').addEventListener('click', function(){
+    document.getElementById('modal-popup').style.display = 'block'
+})
+
+document.getElementById('close').addEventListener('click', function(){
+    document.getElementById('modal-popup').style.display = 'none'
+})
+
 
 privateBtn.addEventListener('click', function(){
-     game_room = prompt('Enter Private Game room name');
-    if(game_room){
+    const room = prompt('Enter Private Game room name');
+    if(room){
       handleSwitchScreen('game');
       gameScreen.style.display = 'block';
 
@@ -16,8 +30,12 @@ privateBtn.addEventListener('click', function(){
 
 
 window.addEventListener('keyup', function(event){
+    
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
         handleSwitchScreen('over');
+        gameScreen.style.display = 'none'
+        var game = new Game();
+        game.run();
     }
 })
 
@@ -64,5 +82,7 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen){
     setStateAndRender(switchScreen(targetScreen));
 }
+
+window.handleSwitchScreen = handleSwitchScreen
 
 updateApp(appState);

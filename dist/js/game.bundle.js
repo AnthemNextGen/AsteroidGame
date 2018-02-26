@@ -3903,7 +3903,7 @@ module.exports = yeast;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.gameScreen = exports.publicGame = exports.privateBtn = undefined;
+exports.playAgain = exports.gameScreen = exports.publicGame = exports.privateBtn = undefined;
 
 var _socket = __webpack_require__(41);
 
@@ -3914,6 +3914,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var privateBtn = exports.privateBtn = document.getElementById('privateButton');
 var publicGame = exports.publicGame = document.getElementById('publicButton');
 var gameScreen = exports.gameScreen = document.getElementById('gameCanvas');
+var playAgain = exports.playAgain = document.getElementById('playAgain');
 
 /***/ }),
 /* 25 */
@@ -3998,17 +3999,34 @@ _game.publicGame.addEventListener('click', function () {
     _game.gameScreen.style.display = 'block';
 });
 
+document.getElementById('playAgain').addEventListener('click', function () {
+    handleSwitchScreen('splash');
+    _game.gameScreen.style.display = 'none';
+});
+
+document.getElementById('endGame').addEventListener('click', function () {
+    document.getElementById('modal-popup').style.display = 'block';
+});
+
+document.getElementById('close').addEventListener('click', function () {
+    document.getElementById('modal-popup').style.display = 'none';
+});
+
 _game.privateBtn.addEventListener('click', function () {
-    game_room = prompt('Enter Private Game room name');
-    if (game_room) {
+    var room = prompt('Enter Private Game room name');
+    if (room) {
         handleSwitchScreen('game');
         _game.gameScreen.style.display = 'block';
     }
 });
 
 window.addEventListener('keyup', function (event) {
+
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
         handleSwitchScreen('over');
+        _game.gameScreen.style.display = 'none';
+        var game = new Game();
+        game.run();
     }
 });
 
@@ -4073,6 +4091,8 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen) {
     setStateAndRender(switchScreen(targetScreen));
 }
+
+window.handleSwitchScreen = handleSwitchScreen;
 
 updateApp(appState);
 
