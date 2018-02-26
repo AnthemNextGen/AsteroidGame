@@ -6,8 +6,8 @@ publicGame.addEventListener('click', function(){
 
 
 privateBtn.addEventListener('click', function(){
-    const room = prompt('Enter Private Game room name');
-    if(room){
+     game_room = prompt('Enter Private Game room name');
+    if(game_room){
       handleSwitchScreen('game');
       gameScreen.style.display = 'block';
 
