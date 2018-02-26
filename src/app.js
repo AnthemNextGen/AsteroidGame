@@ -10,18 +10,17 @@ publicGame.addEventListener('click', function(){
 privateBtn.addEventListener('click', function(){
     document.getElementById('codeDiv').style.display = ('block');
     document.getElementById('codeInput').focus();
+    document.getElementById('startPrompt').style.display = ('none');
 });
 
-codeInput.addEventListener('keyup', function (e) {
-    if (e.keyCode == 13) {
+startButton.addEventListener('click', function () {
         const room = document.getElementById('codeInput').value;
         if(room){
             handleSwitchScreen('game');
             gameScreen.style.display = 'block';
-      
           }
     }
-});
+);
 
 window.addEventListener('keyup', function(event){
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {

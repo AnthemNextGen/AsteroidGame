@@ -59,14 +59,35 @@ table {
 }
 
 #codeInput{
+  font-family: "Lucida Console", "Arial";
   background-color: rgba(255, 255, 255, 0.00);
   color: rgb(255, 255, 255);
   border: 2px solid white;
   border-radius: 5px;
-  width: 30vw;
   text-align: center;
   font-size: 2vw;
- 
+}
+
+#startButton{
+  font-family: "Lucida Console", "Arial";
+  background-color: rgba(255, 255, 255, 0.00);
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 2vw;
+  padding: 0;
+}
+
+#startButton:focus {
+  outline: none;
+}
+
+#startText{
+  animation: fadeIn 0.75s infinite alternate;
+  font-size: 2vw;
+  padding: 0;
+  margin: 1px 0;
 }
 
 #codeInput:focus {
