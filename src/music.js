@@ -1,4 +1,3 @@
-import { gameScreen } from './game';
 export const audioUrl = "./assets/Videogame2.wav";
 export const audio = document.createElement('audio');
 audio.src = audioUrl;
