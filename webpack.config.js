@@ -16,6 +16,6 @@ module.exports = {
             }
         }]
     },
-    watch: true,
+    watch: false,
     devtool: 'source-map'
 };

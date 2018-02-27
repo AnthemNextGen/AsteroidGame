@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start":  "concurrently \"webpack\" \"nodemon node server.js\"",
+    "start":  "webpack && nodemon node server.js",
     "test": "karma start karma.conf.js"
   },
   "keywords": [],
