@@ -171,7 +171,8 @@ video{
 }
 
 .text-center{
-  text-align: center
+  text-align: center;
+  padding: 2%;
 }
 
 .video-page{
@@ -197,8 +198,7 @@ video{
     float: left;
 }
 .game-actions{
-  margin-top: 50px;
-  padding: 290px;
+  margin: 10%;
 }
 
 @keyframes fadeIn {
