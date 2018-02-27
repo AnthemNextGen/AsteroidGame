@@ -1,5 +1,5 @@
 import { audio, IsMusicEnabled as musicEnabled } from './music';
-import { gameScreen, privateBtn, publicGame } from './game';
+import { publicGame, privateBtn, gameScreen } from './game';
 
 publicGame.addEventListener('click', function () {
     document.getElementById('codeDiv').style.display = ('none');
@@ -27,6 +27,9 @@ startButton.addEventListener('click', function () {
 window.addEventListener('keyup', function (event) {
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
         handleSwitchScreen('over');
+        gameScreen.style.display = 'none';
+        var game = new Game();
+        game.run();
     }
 })
 
@@ -74,7 +77,6 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen) {
     setStateAndRender(switchScreen(targetScreen));
 }
-
 window.handleSwitchScreen = handleSwitchScreen
 
 document.addEventListener('click', function(e){

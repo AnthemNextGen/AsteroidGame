@@ -215,7 +215,7 @@ video{
     bottom:0;
     right:0;
   }
- .popup-container{
+  .popup-container{
     background:rgba(0,0,0,.4);
     cursor:pointer;
     display:none;
