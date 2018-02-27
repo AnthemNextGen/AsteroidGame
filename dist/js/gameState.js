@@ -221,11 +221,17 @@ var GameState = State.extend({
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
 			this.socket.emit('endgame', {score: this.score});
-			this.socket.on('playerScores', (players)=>{
-				console.log(players);
-			});
+
+
+			setTimeout(function(){
+				handleSwitchScreen('over');
+				ctx.clearAll();
+				ctx.canvas.height = 0;
+			}, 2000);
+
 		}
 
+		// draw ship
 		this.ship.draw(ctx);
 	}
 });

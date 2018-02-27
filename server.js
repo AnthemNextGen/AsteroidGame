@@ -48,7 +48,6 @@ io.on('connection', (socket)=>{
 
   });
 
-
   socket.on('disconnect', ()=>{
     if(room){
       console.log(socket.id + ' left private game '+ room);
