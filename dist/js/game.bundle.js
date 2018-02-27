@@ -63,12 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83,14 +82,55 @@ var gameScreen = exports.gameScreen = document.getElementById('gameCanvas');
 var playAgain = exports.playAgain = document.getElementById('playAgain');
 
 /***/ }),
-
-/***/ 1:
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _music = __webpack_require__(26);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.musicControl = musicControl;
+var audioUrl = exports.audioUrl = "./assets/Videogame2.wav";
+var audio = exports.audio = document.createElement('audio');
+audio.src = audioUrl;
+var button = exports.button = document.getElementById('play');
+var IsMusicEnabled = exports.IsMusicEnabled = false;
+var soundPauseIcon = '<img src="./assets/pauseVolumeIcon.png"height="40" width="40" />';
+var soundPlayIcon = '<img src="./assets/playVolumeIcon.png" height="40" width="40" />';
+
+function musicControl(audioUrl) {
+  if (audioUrl && audio.paused) {
+    audio.play();
+    audio.loop = true;
+    exports.IsMusicEnabled = IsMusicEnabled = true;
+    return true;
+  } else if (audioUrl && audio.play) {
+    audio.pause();
+    exports.IsMusicEnabled = IsMusicEnabled = false;
+    return true;
+  }
+}
+
+button.addEventListener('click', function (event) {
+  if (IsMusicEnabled == true) {
+    musicControl(audioUrl);
+    button.innerHTML = soundPauseIcon;
+  } else if (IsMusicEnabled == false) {
+    musicControl(audioUrl);
+    button.innerHTML = soundPlayIcon;
+  }
+});
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _music = __webpack_require__(1);
 
 var _game = __webpack_require__(0);
 
@@ -211,50 +251,6 @@ document.addEventListener('click', function (e) {
 
 updateApp(appState);
 
-/***/ }),
-
-/***/ 26:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.musicControl = musicControl;
-var audioUrl = exports.audioUrl = "./assets/Videogame2.wav";
-var audio = exports.audio = document.createElement('audio');
-audio.src = audioUrl;
-var button = exports.button = document.getElementById('play');
-var IsMusicEnabled = exports.IsMusicEnabled = false;
-var soundPauseIcon = '<img src="./assets/pauseVolumeIcon.png"height="40" width="40" />';
-var soundPlayIcon = '<img src="./assets/playVolumeIcon.png" height="40" width="40" />';
-
-function musicControl(audioUrl) {
-  if (audioUrl && audio.paused) {
-    audio.play();
-    audio.loop = true;
-    exports.IsMusicEnabled = IsMusicEnabled = true;
-    return true;
-  } else if (audioUrl && audio.play) {
-    audio.pause();
-    exports.IsMusicEnabled = IsMusicEnabled = false;
-    return true;
-  }
-}
-
-button.addEventListener('click', function (event) {
-  if (IsMusicEnabled == true) {
-    musicControl(audioUrl);
-    button.innerHTML = soundPauseIcon;
-  } else if (IsMusicEnabled == false) {
-    musicControl(audioUrl);
-    button.innerHTML = soundPlayIcon;
-  }
-});
-
 /***/ })
-
-/******/ });
+/******/ ]);
 //# sourceMappingURL=game.bundle.js.map
