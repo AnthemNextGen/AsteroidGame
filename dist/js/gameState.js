@@ -221,8 +221,7 @@ var GameState = State.extend({
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
 			//this.socket.emit('endgame', {score: this.score});
-
-
+			document.getElementById('scoreVal').innerText = this.score;
 			setTimeout(function(){
 				handleSwitchScreen('over');
 				ctx.clearAll();
