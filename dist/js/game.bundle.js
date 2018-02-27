@@ -244,8 +244,10 @@ document.addEventListener('click', function (e) {
 
 document.addEventListener('click', function (e) {
     if (e.target && e.target.id == "playAgain") {
-        handleSwitchScreen('splash');
-        _game.gameScreen.style.display = 'none';
+        // handleSwitchScreen('splash')
+        // gameScreen.style.display = 'none';
+
+        window.location.reload();
     }
 });
 
