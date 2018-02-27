@@ -31,11 +31,21 @@ io.on('connection', (socket)=>{
     if(room){
       console.log('A player joinned room :' + room);
       console.log(game_rooms);
-      io.to(room).emit('state', {id:socket.id, score: data.score});
+      //io.to(room).emit('state', {id:socket.id, score: data.score});
     }else{
       console.log('A player Joinned the Public Game');
-      console.log(game_rooms);
     }
+
+    socket.on('endgame', (data)=>{
+      console.log('Player ' + socket.id + ' died');
+      console.log(data);
+      if(room){
+        io.to(room).emit('playerScores', data);
+      }else{
+        io.emit('playerScores', data);
+      }
+    });
+
   });
 
 

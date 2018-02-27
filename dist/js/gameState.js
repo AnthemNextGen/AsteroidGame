@@ -220,6 +220,10 @@ var GameState = State.extend({
 		// draw game over messege
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
+			this.socket.emit('endgame', {score: this.score});
+			this.socket.on('playerScores', (players)=>{
+				console.log(players);
+			});
 		}
 		function drawShip(){
 			this.ship.draw(ctx);
