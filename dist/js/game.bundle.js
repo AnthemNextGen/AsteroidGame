@@ -63,20 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	return __webpack_require__(__webpack_require__.s = 28);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ 24:
-=======
 /******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
->>>>>>> master
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88,17 +79,10 @@ Object.defineProperty(exports, "__esModule", {
 var privateBtn = exports.privateBtn = document.getElementById('privateButton');
 var publicGame = exports.publicGame = document.getElementById('publicButton');
 var gameScreen = exports.gameScreen = document.getElementById('gameCanvas');
-<<<<<<< HEAD
-
-/***/ }),
-
-/***/ 25:
-=======
 var playAgain = exports.playAgain = document.getElementById('playAgain');
 
 /***/ }),
 /* 1 */
->>>>>>> master
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -140,26 +124,15 @@ button.addEventListener('click', function (event) {
 });
 
 /***/ }),
-<<<<<<< HEAD
-
-/***/ 28:
-=======
 /* 2 */
->>>>>>> master
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-<<<<<<< HEAD
-var _game = __webpack_require__(24);
-
-var _music = __webpack_require__(25);
-=======
 var _music = __webpack_require__(1);
 
 var _game = __webpack_require__(0);
->>>>>>> master
 
 _game.publicGame.addEventListener('click', function () {
     document.getElementById('codeDiv').style.display = 'none';
@@ -186,12 +159,9 @@ startButton.addEventListener('click', function () {
 window.addEventListener('keyup', function (event) {
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
         handleSwitchScreen('over');
-<<<<<<< HEAD
-=======
         _game.gameScreen.style.display = 'none';
         var game = new Game();
         game.run();
->>>>>>> master
     }
 });
 
@@ -257,8 +227,6 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen) {
     setStateAndRender(switchScreen(targetScreen));
 }
-<<<<<<< HEAD
-=======
 window.handleSwitchScreen = handleSwitchScreen;
 
 document.addEventListener('click', function (e) {
@@ -280,18 +248,9 @@ document.addEventListener('click', function (e) {
         _game.gameScreen.style.display = 'none';
     }
 });
->>>>>>> master
 
 updateApp(appState);
 
-/***/ })
-<<<<<<< HEAD
+ })
+ ]);
 
-/******/ });
-//# sourceMappingURL=game.bundle.js.map
-=======
->>>>>>> bde330cf13b014784dc715e8d1c055a43f02c0c4
-=======
-/******/ ]);
-//# sourceMappingURL=game.bundle.js.map
->>>>>>> master
