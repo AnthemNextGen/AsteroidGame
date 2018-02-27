@@ -130,9 +130,9 @@ button.addEventListener('click', function (event) {
 "use strict";
 
 
-var _game = __webpack_require__(0);
-
 var _music = __webpack_require__(1);
+
+var _game = __webpack_require__(0);
 
 _game.publicGame.addEventListener('click', function () {
     document.getElementById('codeDiv').style.display = 'none';
@@ -224,6 +224,28 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen) {
     setStateAndRender(switchScreen(targetScreen));
 }
+
+window.handleSwitchScreen = handleSwitchScreen;
+
+document.addEventListener('click', function (e) {
+
+    if (e.target && e.target.id == "endGame") {
+        document.getElementById('modal-popup').style.display = 'block';
+    }
+});
+
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id == "close") {
+        document.getElementById('modal-popup').style.display = 'none';
+    }
+});
+
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id == "playAgain") {
+        handleSwitchScreen('splash');
+        _game.gameScreen.style.display = 'none';
+    }
+});
 
 updateApp(appState);
 

@@ -1,5 +1,5 @@
-import { publicGame, privateBtn, gameScreen } from './game';
 import { audio, IsMusicEnabled as musicEnabled } from './music';
+import { gameScreen, privateBtn, publicGame } from './game';
 
 publicGame.addEventListener('click', function () {
     document.getElementById('codeDiv').style.display = ('none');
@@ -74,5 +74,31 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen) {
     setStateAndRender(switchScreen(targetScreen));
 }
+
+window.handleSwitchScreen = handleSwitchScreen
+
+document.addEventListener('click', function(e){
+
+    if(e.target && e.target.id=="endGame"){
+        document.getElementById('modal-popup').style.display = 'block'
+    }
+    
+})
+
+document.addEventListener('click', function(e){
+     if(e.target && e.target.id=="close"){
+        document.getElementById('modal-popup').style.display = 'none'
+    }
+    
+})
+
+document.addEventListener('click', function(e){
+     if(e.target && e.target.id=="playAgain"){
+        handleSwitchScreen('splash')
+        gameScreen.style.display = 'none';
+    }
+    
+})
+
 
 updateApp(appState);

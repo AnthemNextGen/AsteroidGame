@@ -220,18 +220,16 @@ var GameState = State.extend({
 		// draw game over messege
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
-			var interval = setTimeout(function(){
-				if( document.getElementsByClassName('over')[0].classList.contains('hidden')){
-					handleSwitchScreen('over');
-					document.getElementById('gameCanvas').style.display = 'none'
-					var game = new Game();
-					game.run();
-			   }
-			   
-			   interval.clearTimeout()
-			clearTimeout(interval)
-			},5000)
-		   
+			this.game.nextState = States.END;
+					this.game.stateVars.score = this.score;
+					setTimeout(function(){
+				handleSwitchScreen('over');
+				document.getElementById('gameCanvas').style.display = 'none'
+				var game = new Game();
+				game.run();
+			},3000)
+					return;
+
 		}
 		function drawShip(){
 			this.ship.draw(ctx);
