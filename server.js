@@ -35,17 +35,6 @@ io.on('connection', (socket)=>{
     }else{
       console.log('A player Joinned the Public Game');
     }
-
-    socket.on('endgame', (data)=>{
-      console.log('Player ' + socket.id + ' died');
-      console.log(data);
-      if(room){
-        io.to(room).emit('playerScores', data);
-      }else{
-        io.emit('playerScores', data);
-      }
-    });
-
   });
 
   socket.on('disconnect', ()=>{

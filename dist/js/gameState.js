@@ -220,7 +220,7 @@ var GameState = State.extend({
 		// draw game over messege
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
-			this.socket.emit('endgame', {score: this.score});
+			//this.socket.emit('endgame', {score: this.score});
 
 
 			setTimeout(function(){
