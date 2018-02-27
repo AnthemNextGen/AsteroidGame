@@ -198,7 +198,7 @@ var GameState = State.extend({
 
 	render: function(ctx) {
 		ctx.clearAll();
-		this.socket.emit('join', {lives: this.score});
+		this.socket.emit('join', {score: this.score});
 		// draw score and extra lives
 		if(game_room){
 			ctx.vectorText(this.score, 3, 35, 15);

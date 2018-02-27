@@ -27,15 +27,17 @@ console.log(socket.handshake.query);
 
 io.on('connection', (socket)=>{
   socket.on('join', (data)=>{
-    console.log('A player joinned');
+    console.log('Your score is ' + data.score);
     if(room){
       console.log('A player joinned room :' + room);
       console.log(game_rooms);
+      io.to(room).emit('state', {id:socket.id, score: data.score});
     }else{
       console.log('A player Joinned the Public Game');
       console.log(game_rooms);
     }
   });
+
 
   socket.on('disconnect', ()=>{
     if(room){
@@ -45,5 +47,5 @@ io.on('connection', (socket)=>{
     }
   });
 
-  
+
 });
