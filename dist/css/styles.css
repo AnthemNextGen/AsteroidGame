@@ -27,11 +27,21 @@ body{
   display: "none";
   font-family: "Lucida Console", "Arial";
   text-align: center;
-  padding: 5% 2% 15% 0%;
+  padding: 5% 2% 2% 0%;
   font-size: 8vw;
   color: #000000;
   -webkit-text-stroke: 3px white;
   animation: fadeIn 5s;
+}
+
+#welcome{
+  font-family: "Lucida Console", "Arial";
+  text-align: center;
+  padding: 2% 0% 5% 0%;
+  font-size: 6vw;
+  color: #000000;
+  -webkit-text-stroke: 2px white;
+  animation: fadeIn 10s;
 }
 
 #tableDiv{
