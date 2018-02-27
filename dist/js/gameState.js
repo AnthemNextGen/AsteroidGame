@@ -220,20 +220,15 @@ var GameState = State.extend({
 		// draw game over messege
 		if (this.gameOver) {
 			ctx.vectorText("Game Over", 4, null, null);
-			this.game.nextState = States.END;
-					this.game.stateVars.score = this.score;
-					setTimeout(function(){
+
+			setTimeout(function(){
 				handleSwitchScreen('over');
-				document.getElementById('gameCanvas').style.display = 'none'
-				var game = new Game();
-				game.run();
-			},3000)
-					return;
+				ctx.clearAll();
+				ctx.canvas.height = 0;
+			}, 2000);
 
 		}
-		function drawShip(){
-			this.ship.draw(ctx);
-		}
+
 		// draw ship
 		this.ship.draw(ctx);
 	}
