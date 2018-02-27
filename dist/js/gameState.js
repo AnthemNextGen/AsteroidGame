@@ -225,10 +225,7 @@ var GameState = State.extend({
 				console.log(players);
 			});
 		}
-		function drawShip(){
-			this.ship.draw(ctx);
-		}
-		// draw ship
+
 		this.ship.draw(ctx);
 	}
 });
