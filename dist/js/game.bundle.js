@@ -80,6 +80,7 @@ Object.defineProperty(exports, "__esModule", {
 var privateBtn = exports.privateBtn = document.getElementById('privateButton');
 var publicGame = exports.publicGame = document.getElementById('publicButton');
 var gameScreen = exports.gameScreen = document.getElementById('gameCanvas');
+var playAgain = exports.playAgain = document.getElementById('playAgain');
 
 /***/ }),
 
@@ -89,9 +90,9 @@ var gameScreen = exports.gameScreen = document.getElementById('gameCanvas');
 "use strict";
 
 
-var _game = __webpack_require__(0);
-
 var _music = __webpack_require__(26);
+
+var _game = __webpack_require__(0);
 
 _game.publicGame.addEventListener('click', function () {
     document.getElementById('codeDiv').style.display = 'none';
@@ -118,6 +119,9 @@ startButton.addEventListener('click', function () {
 window.addEventListener('keyup', function (event) {
     if (event.keyCode == 27 && currentState.currentScreen == 'game') {
         handleSwitchScreen('over');
+        _game.gameScreen.style.display = 'none';
+        var game = new Game();
+        game.run();
     }
 });
 
@@ -183,6 +187,27 @@ function switchScreen(targetScreen) {
 function handleSwitchScreen(targetScreen) {
     setStateAndRender(switchScreen(targetScreen));
 }
+window.handleSwitchScreen = handleSwitchScreen;
+
+document.addEventListener('click', function (e) {
+
+    if (e.target && e.target.id == "endGame") {
+        document.getElementById('modal-popup').style.display = 'block';
+    }
+});
+
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id == "close") {
+        document.getElementById('modal-popup').style.display = 'none';
+    }
+});
+
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id == "playAgain") {
+        handleSwitchScreen('splash');
+        _game.gameScreen.style.display = 'none';
+    }
+});
 
 updateApp(appState);
 
